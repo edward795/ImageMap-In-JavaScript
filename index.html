@@ -1,0 +1,73 @@
+<html>   
+   <head>
+      <title>Using JavaScript Image Map</title>
+      <h2>ImageMap Using JavaScript</h2>
+      <p>Using ImageMap we can create some dynamic effects and events in a webPage.Many of you may have come across
+webpages that have images,where click on each part of the image redirects to a new page or initiates another events.
+These are created using ImageMap.Hovering your mouse over a specific region of the image can also create some transitions.
+Let's see how this is done.</p>
+
+      <h3>Here is an Example Of ImageMap</h3>
+      
+      <script type = "text/javascript">
+         <!--
+            function showTutorial(name) {
+               document.myform.stage.value = name
+            }
+
+            function myfunc(area){
+               alert("you clicked on "+area+" Area");
+            }
+         //-->
+      </script>
+   </head>
+   
+   <body>
+      <form name = "myform">
+      <br/>
+      <br/>
+         <b>See the text area here while dragging your mouse over each circle</b>
+         <br/>
+         <input type = "text" name = "stage" size = "20" />
+      </form>
+      <p>=>  Click on each area triggers a diferent event  <=</p>
+      </br>
+      
+      <!-- Create  Mappings -->
+      <img src = "https://starkenterprises7.files.wordpress.com/2020/04/page-01-3.jpeg" alt = "HTML Map" border = "0" usemap = "#tutorials"/>
+      
+      <map name = "tutorials">
+         <area shape="circle" 
+            coords = "448,120,74"
+            onclick="myfunc('HTML')"
+            href = "#" alt = "HTML Tutorial"
+            target = "_self" 
+            onMouseOver = "showTutorial('HTML')" 
+            onMouseOut = "showTutorial('')"/>
+         
+         <area shape = "circle" 
+            coords = "448,329,108"
+            onclick="myfunc('CSS')"
+            href = "#" alt = "CSS Tutorial" 
+            target = "_self" 
+            onMouseOver = "showTutorial('CSS')" 
+            onMouseOut = "showTutorial('')"/>
+         
+         <area shape = "circle" 
+            coords = "448,605,148"
+            onclick="myfunc('JavaScript')"
+            href = "#" alt = "JavaScript Tutorial"
+            target = "_self" 
+            onMouseOver = "showTutorial('JavaScript')" 
+            onMouseOut = "showTutorial('')"/>
+      </map>
+   </body>
+   <h4>How ImageMap Works</h4>
+   <p>Client-side image maps are enabled by the usemap attribute for the 'img ' tag and defined by special 'map' and 'area' extension tags.
+
+The image that is going to form the map is inserted into the page using the 'img ' element as normal, except that it carries an extra attribute called usemap. The value of the usemap attribute is the value of the name attribute on the <map> element, which you are about to meet, preceded by a pound or hash sign.
+
+The 'map' element actually creates the map for the image and usually follows directly after the 'img' element. It acts as a container for the 'area' elements that actually define the clickable hotspots. The 'map' element carries only one attribute, the name attribute, which is the name that identifies the map. This is how the 'img' element knows which 'map' element to use.
+
+The 'area' element specifies the shape and the coordinates that define the boundaries of each clickable hotspot.</p>
+</html>
